@@ -5,3 +5,11 @@ Algo needs to do the following:
 size is how many students enrolled
 - pandas array for timetable
 """
+
+from timetable import df
+
+def main():
+    print(df.T)
+
+if __name__ == "__main__":
+    main()
