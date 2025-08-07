@@ -3,7 +3,7 @@ import data
 
 model = cp_model.CpModel()
 
-subject_vars = {subject: model.NewIntVar(0, data.NUM_SLOTS - 1, subject) for subject in data.subjects_set   }
+subject_vars = {subject: model.NewIntVar(0, data.NUM_SLOTS - 1, subject) for subject in data.subjects_set}
 
 for student, subjects in data.students.items():
     for i in range(len(subjects)):
@@ -20,8 +20,8 @@ status = solver.Solve(model)
 
 if status == cp_model.OPTIMAL or status == cp_model.FEASIBLE:
     print("Schedule found:")
-    for subject in subjects:
-        print(f"{subject:10} → Slot {solver.Value(subject_vars[subject])}, Students: {[data.subjects[subject]]}")
-    print(f"\n📊 Total slots used: {solver.Value(max_slot) + 1}")
+    for subject in data.subjects_set:
+        print(f"{subject:10} → {data.time_slots[solver.Value(subject_vars[subject])]}")
+    print(f"\n Total slots used: {solver.Value(max_slot) + 1}")
 else:
     print("❌ No valid schedule found.")
