@@ -14,7 +14,8 @@ subjects = {
     "PE": [student for student in students if "PE" in students[student]],
     "Philosophy": [student for student in students if "Philosophy" in students[student]]
 }
+subjects_set = sorted(set(subj for subj in subjects))
 
 time_slots = ["9:00am", "10:30am", "12:00am", "1:30pm"]
-
-print(subjects)
+NUM_SLOTS = 5
+SLOTS = list(range(5))
