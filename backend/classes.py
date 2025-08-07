@@ -29,6 +29,9 @@ class Block:
     
     def __repr__(self):
         return f"{self.filled_by}"
+    
+    def update_filled_by(self, subj):
+        self.filled_by = subj
 
 class Timetable:
     def __init__(self):
