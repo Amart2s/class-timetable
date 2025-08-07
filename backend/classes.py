@@ -1,8 +1,15 @@
-class Subject:
-    def __init__(self, subject, length, size):
+"""
+when creating a subject, want:
+- class ID
+- How many lectures/tutorials/semenars, how long is each
+- size of class for each lec/sem/tut
+- prof of class
+"""
+
+class Subject():
+
+    def __init__(self, subject, ):
         self.subject = subject
-        self.length = length
-        self.size = size
     
     def get_size(self):
         return self.size
@@ -12,7 +19,7 @@ class Subject:
     
     def get_subject(self):
         return self.subject
-    
+
 class Block:
     def __init__(self, day, start, room=None, filled_by=None):
         self.day = day

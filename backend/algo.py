@@ -1,15 +1,20 @@
-"""
-Algo needs to do the following:
-- take in a list with elements as tuples (name of student, student ID, [classes they are enrolled in])
-- create object for each class, subject is subject ID, length is either 1 or 2 depending on class, 
-size is how many students enrolled
-- pandas array for timetable
-"""
+from constraint import Problem
+import data
 
-from timetable import df
+problem = Problem()
 
-def main():
-    print(df.T)
+problem.addVariables([s for s in data.subjects], data.time_slots)
 
-if __name__ == "__main__":
-    main()
+for student, subjects in data.students.items():
+    for i in range(len(subjects)):
+        for j in range(i + 1, len(subjects)):
+            problem.addConstraint(lambda t1, t2: t1 != t2, (subjects[i], subjects[j]))
+
+solution = problem.getSolution()
+
+if solution:
+    print("Valid timetable:")
+    for subject, time in sorted(solution.items(), key=lambda x: x[1]):
+        print(f"{subject:10} -> {time}, Students: {[s for s in data.students if s in data.subjects[subject]]}")
+else:
+    print('No valid timetable found.')

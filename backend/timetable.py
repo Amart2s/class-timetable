@@ -1,5 +1,6 @@
 import pandas as pd
 from classes import Block
+from classes import Subject
 
 days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
 times = ["9:00", "10:00", "11:00", "1:30", "2:30", "3:30", "4:30"]
@@ -70,3 +71,8 @@ df = pd.DataFrame([
 ])
 
 df.set_index("Day", inplace=True)
+
+profs = [{"Islam": ["PHI101", "PHI102", "PHI201", "PHI202", "PHI301", "PHI302"],
+          "Chavura": ["HIS101", "HIS102", "HIS201", "HIS202", "HIS301", "HIS302"]}]
+
+subjects = [(Subject(subject, 2, 40), Subject(subject, 1,))]
