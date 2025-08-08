@@ -50,4 +50,4 @@ if status == cp_model.OPTIMAL or status == cp_model.FEASIBLE:
 else:
     print("❌ No valid schedule found.")
 
-print(df.T)
+print(df.T)   

@@ -123,7 +123,7 @@ professors = {
     "Luke": ["THE101", "THE201", "THE301"]
 }
 
-time_slots = ["9:00am", "10:00am", "11:00am", "1:30pm", "2:30pm", "3:30pm", "4:30pm"]
+time_slots = ["9:00am", "10:00am", "11:00am" "1:30pm", "2:30pm", "3:30pm", "4:30pm"]
 days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
 
 NUM_SLOTS = 25
